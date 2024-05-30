@@ -1,0 +1,67 @@
+<!-- edit_ingr.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Ingredient</title>
+</head>
+<body>
+    <h1>Edit Ingredient</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="id_ingr_name">Ingredient Name:</label>
+            <input type="text" id="id_ingr_name" name="ingr_name" value="{{ form.instance.ingr_name }}">
+            <!-- Add any error message display logic here if needed -->
+        </div>
+        <div>
+            <label for="id_ingr_quant">Quantity:</label>
+            <input type="number" id="id_ingr_quant" name="ingr_quant" value="{{ form.instance.ingr_quant }}">
+            <!-- Add any error message display logic here if needed -->
+        </div>
+        <div>
+            <label for="id_ingr_desc">Description:</label>
+            <input type="text" id="id_ingr_desc" name="ingr_desc" value="{{ form.instance.ingr_desc }}">
+            <!-- Add any error message display logic here if needed -->
+        </div>
+        <div>
+            <label for="id_ingr_catg">Category:</label>
+            <input type="text" id="id_ingr_catg" name="ingr_catg" value="{{ form.instance.ingr_catg }}">
+            <!-- Add any error message display logic here if needed -->
+        </div>
+        <div>
+            <label for="id_ingr_cost">Cost:</label>
+            <input type="number" id="id_ingr_cost" name="ingr_cost" value="{{ form.instance.ingr_cost }}">
+            <!-- Add any error message display logic here if needed -->
+        </div>
+        <div>
+            <label for="id_ingr_suppNo">Supplier Number:</label>
+            <input type="text" id="id_ingr_suppNo" name="ingr_suppNo" value="{{ form.instance.ingr_suppNo }}">
+            <!-- Add any error message display logic here if needed -->
+        </div>
+        <div>
+            <label for="id_ingr_exp">Expiration Date:</label>
+            <input type="date" id="id_ingr_exp" name="ingr_exp" value="{{ form.instance.ingr_exp }}">
+            <!-- Add any error message display logic here if needed -->
+        </div>
+        <div>
+            <label for="id_ingr_batch">Batch:</label>
+            <input type="text" id="id_ingr_batch" name="ingr_batch" value="{{ form.instance.ingr_batch }}">
+            <!-- Add any error message display logic here if needed -->
+        </div>
+        <div>
+            <label for="id_ingr_date">Date:</label>
+            <input type="date" id="id_ingr_date" name="ingr_date" value="{{ form.instance.ingr_date }}">
+            <!-- Add any error message display logic here if needed -->
+        </div>
+        <div>
+            <label for="id_ingr_act">Active:</label>
+            <input type="checkbox" id="id_ingr_act" name="ingr_act" {% if form.instance.ingr_act %}checked{% endif %}>
+            <!-- Add any error message display logic here if needed -->
+        </div>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

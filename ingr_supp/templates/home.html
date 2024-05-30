@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'view' %}" id="nav-item-1">Supplies</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'ingr' %}" id="nav-item-2">Ingredients</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'prod' %}" id="nav-item-3">Products</a>
+        </li>
+    </ul>
+    <div class="container-fluid py-5">
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addIngredientModal{{ supplies.id }}">
+      ADD
+  </button>
+   <!-- Modal for adding ingredient -->
+   <div class="modal fade" id="addIngredientModal{{ supplies.id }}" tabindex="-1" aria-labelledby="addIngredientModalLabel{{ supplies.id }}" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <!-- Form for adding ingredient data -->
+              <div class="modal-header">
+                  <h5 class="modal-title" id="addIngredientModalLabel{{ ingredient.id }}">Add Ingredient</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form method="POST" action="{% url 'add_supply' %}">
+                      {% csrf_token %}
+                      <div class="mb-3">
+                          <label for="Supp_name" class="form-label">Name</label>
+                          <input type="text" class="form-control" id="Supp_name" name="Supp_name" value="">
+                      </div>
+                      <div class="mb-3">
+                          <label for="Supp_quant" class="form-label">Quantity</label>
+                          <input type="Number" class="form-control" id="Supp_quant" name="Supp_quant" value="">
+                      </div>
+                      <div class="mb-3">
+                          <label for="Supp_desc" class="form-label">Description</label>
+                          <input type="text" class="form-control" id="Supp_desc" name="Supp_desc" value="">
+                      </div>
+                      <div class="mb-3">
+                          <label for="Supp_catg" class="form-label">Category</label>
+                          <input type="text" class="form-control" id="Supp_catg" name="Supp_catg" value="">
+                      </div>
+                      <div class="mb-3">
+                        <label for="Supp_cost" class="form-label">Cost</label>
+                        <input type="number" step="any" class="form-control" id="Supp_cost" name="Supp_cost" value="">
+                    </div>
+                      <div class="mb-3">
+                          <label for="Supp_suppNo" class="form-label">Supplier Number</label>
+                          <input type="text" class="form-control" id="Supp_suppNo" name="Supp_suppNo" value="">
+                      </div>
+                      <div class="mb-3">
+                        <div class="mb-3">
+                            <label for="Supp_date" class="form-label">Date</label>
+                            <input type="date" class="form-control" id="Supp_date" name="Supp_date" value="{">
+                        </div>
+                          <label for="Supp_exp" class="form-label">Expiration Date</label>
+                          <input type="date" class="form-control" id="Supp_exp" name="Supp_exp" value="">
+                      </div>
+                      
+                      <div class="mb-3 form-check">
+                          <input type="checkbox" class="form-check-input" id="Supp_act" name="ingr_act" {% if supplies.Supp_act %}checked{% endif %}>
+                          <label class="form-check-label" for="Supp_act">Active</label>
+                      </div>
+                      <!-- Add other form fields similarly for other attributes -->
+                      <button type="submit" class="btn btn-primary">Add</button>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Description</th>
+            <th scope="col">Category</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Supplier Number</th>
+            <th scope="col">Date</th>
+            <th scope="col">Batch</th>
+            <th scope="col">Expiration Date</th>
+            <th scope="col">Active</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for supplies in supplies %}
+          <tr>
+            <td>{{ supplies.Supp_name }}</td>
+            <td>{{ supplies.Supp_quant }}</td>
+            <td>{{ supplies.Supp_desc }}</td>
+            <td>{{ supplies.Supp_catg }}</td>
+            <td>{{ supplies.Supp_cost }}</td>
+            <td>{{ supplies.Supp_suppNo }}</td>
+            <td>{{ supplies.Supp_date }}</td>
+            <td>{{ supplies.Supp_batch }}</td>
+            <td>{{ supplies.Supp_exp }}</td>
+            <td>{{ supplies.Supp_act }}</td>
+            <td>
+                <!-- Button trigger modal for editing supply -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal{{ supplies.id }}">
+                    EDIT
+                </button>
+                
+                <!-- Modal for editing supply -->
+                <div class="modal fade" id="editModal{{ supplies.id }}" tabindex="-1" aria-labelledby="editModalLabel{{ supplies.id }}" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <!-- Form for editing supply data -->
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editModalLabel{{ supplies.id }}">Edit Supply</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form method="POST" action="{% url 'update_supply' supplies.id %}">
+                                    {% csrf_token %}
+                                    <div class="mb-3">
+                                        <label for="Supp_name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="Supp_name" name="Supp_name" value="{{ supplies.Supp_name }}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="Supp_quant" class="form-label">Quantity</label>
+                                        <input type="Number" class="form-control" id="Supp_quant" name="Supp_quant" value="{{ supplies.Supp_quant }}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="Supp_desc" class="form-label">Description</label>
+                                        <input type="text" class="form-control" id="Supp_desc" name="Supp_desc" value="{{ supplies.Supp_desc }}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="Supp_catg" class="form-label">Category</label>
+                                        <input type="text" class="form-control" id="Supp_catg" name="Supp_catg" value="{{ supplies.Supp_catg }}">
+                                    </div>
+                                    <div class="mb-3">
+                                      <label for="Supp_cost" class="form-label">Cost</label>
+                                      <input type="number" step="any" class="form-control" id="Supp_cost" name="Supp_cost" value="{{ supplies.Supp_cost }}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="Supp_suppNo" class="form-label">Supplier Number</label>
+                                        <input type="text" class="form-control" id="Supp_suppNo" name="Supp_suppNo" value="{{ supplies.Supp_quant }}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="Supp_date" class="form-label">Date</label>
+                                        <input type="date" class="form-control" id="Supp_date{{ supplies.id }}"name="Supp_date" value="{{ supplies.Supp_date|date:'Y-m-d' }}">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="Supp_exp" class="form-label">Expiration Date</label>
+                                        <input type="date" class="form-control" id="Supp_exp{{ supplies.id }}"name="Supp_exp" value="{{ supplies.Supp_exp|date:'Y-m-d' }}">
+                                    </div>
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="Supp_act" name="Supp_act" {% if supplies.Supp_act %}checked{% endif %}>
+                                        <label class="form-check-label" for="Supp_act">Active</label>
+                                    </div>
+                                    <!-- Add other form fields similarly for other attributes -->
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button for deleting ingredient -->
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal{{ supplies.id }}">
+                    DELETE
+                </button>
+
+                <!-- Modal for confirming ingredient deletion -->
+                <div class="modal fade" id="confirmDeleteModal{{ supplies.id }}" tabindex="-1" aria-labelledby="confirmDeleteModalLabel{{ supplies.id }}" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="confirmDeleteModalLabel{{ supplies.id }}">Confirm Deletion</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete this ingredient?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <form method="POST" action="{% url 'delete_supplies' supplies.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            
+          {% endfor %}
+        </tbody>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        // Add active class to the active nav link
+        document.querySelector('#nav-item-1').classList.add('active');
+    </script>
+</body>
+</html>

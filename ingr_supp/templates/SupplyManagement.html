@@ -1,0 +1,536 @@
+{%load static%}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <link rel="stylesheet" href="./styles/SupplyManagement.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel ="stylesheet" href='https://fonts.googleapis.com/css?family=Darker Grotesque'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png">
+</head>
+
+<body style="background-color: #F0EAD6;">
+
+    <div class="flex h-screen" style="background-color: #F0EAD6;">
+        <!-- sidemenu -->
+        <nav class="sidebar">
+            <header>
+                <a href="index.html" class="myCoffeeshop">
+                <div class="image-text">
+                    <span class="image">
+                        <img src="./images/coffeeLogo.svg" alt="logo">
+                    </span>
+    
+                    <div class="text header-text">
+                        <span class="myText">My</span>
+                        <span class="coffeeText">Coffee<span class="shopText">shop</span></span>
+                    </div>
+                </div>
+            </a>
+            </header>
+    
+            <div class="menu-bar">
+                <div class="menu">
+                    <ul class="menu-links">
+                        <li class="nav-link">
+                            <a href="dashboard.html">
+                                <i class='bx bx-home-alt icon'></i>
+                                <span class="text nav-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="inventory.html">
+                                <i class='bx bx-spreadsheet icon'></i>
+                                <span class="text nav-text">Inventory</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="menu.html">
+                                <i class='bx bx-grid-alt icon'></i>
+                                <span class="text nav-text">Menu</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="orders.html">
+                                <i class='bx bx-cart-alt icon'></i>
+                                <span class="text nav-text">Orders</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="customers.html">
+                                <i class='bx bx-user icon'></i>
+                                <span class="text nav-text">Customers</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="reports-sales.html">
+                                <i class='bx bx-food-menu icon'></i>
+                                <span class="text nav-text">Reports</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="Product Management.html">
+                                <i class='bx bx-package icon'></i>
+                                <span class="text nav-text">Product</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="SupplyManagement.html" class="activeSidebar">
+                                <i class='bx bx-box icon'></i>
+                                <span class="text nav-text">Supply</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div> 
+                
+                <div class="bottom-content">
+                    <li class="nav-link">
+                        <a href="settings.html">
+                            <i class='bx bx-cog icon'></i>
+                            <span class="text nav-text">Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-log-out icon'></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="flex-grow p-6 overflow-y-auto" style="margin-left: 250px;">
+            <!-- main page  -->
+            <div id="supply-management" class="mb-4">
+                <h2 class="text-2xl font-semibold mb-2" style="color: #884A39;"><strong>Supply Management</strong></h2>
+                <p class="text-gray-700 mb-4">This section shows a list of all supplies and ingredients.</p>
+                
+                <!-- supplies and ingredients segments -->
+                <div class="flex relative mb-4">
+                    <button id="show-supplies" class="segment rounded-tl rounded-bl">Supplies</button>
+                    <button id="show-ingredients" class="segment rounded-tr rounded-br">Ingredients</button>
+                    <div class="divider"></div>
+                </div>
+                
+                <!--suppliesTable -->
+                <div id="supplies-table">
+                    <div class="flex justify-between items-center mb-4">
+
+                        <h3 class="text-lg font-semibold" style="color: #884A39;"><strong>List of Supplies</strong></h3>
+
+                        <button id="add-supply" class="block text-white hover:rounded px-3 py-2" style="background-color: #884A39; border-radius: 5px;">Add Supply</button>
+                    </div>
+                    <table class="table-auto w-full">
+                        <thead>
+                            <tr>
+                                <th class="px-4 py-2 "><div  style="display: flex; align-items: center; justify-content: space-between;"><h5>ID</h5><img src="images/sort-solid.svg" class="sort-icon" alt="Sort Icon" style="width: 0.8em; height: 0.8em;"></div></th>
+                                <th class="px-4 py-2 "><div  style="display: flex; align-items: center; justify-content: space-between;"><h5>Supply Name</h5><img src="images/sort-solid.svg" class="sort-icon" alt="Sort Icon" style="width: 0.8em; height: 0.8em;"></div></th>
+                                <th class="px-4 py-2 "><div  style="display: flex; align-items: center; justify-content: space-between;"><h5>Unit of Measurement</h5><img src="images/sort-solid.svg" class="sort-icon" alt="Sort Icon" style="width: 0.8em; height: 0.8em;"></div></th>
+                                <th class="px-4 py-2 "><div  style="display: flex; align-items: center; justify-content: space-between;"><h5>Category</h5><img src="images/sort-solid.svg" class="sort-icon" alt="Sort Icon" style="width: 0.8em; height: 0.8em;"></div></th>
+                                <th class="px-4 py-2 "><div  style="display: flex; align-items: center; justify-content: space-between;"><h5>Cost</h5><img src="images/sort-solid.svg" class="sort-icon" alt="Sort Icon" style="width: 0.8em; height: 0.8em;"></div></th>
+                                <th class="px-4 py-2 ">Supplier Contact No.</th>
+                                <th class="px-4 py-2 ">Modify</th>
+                                <th class="px-4 py-2 "><div  style="display: flex; align-items: center; justify-content: space-between;"><h5>Status</h5></div></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- sample row -->
+                            <tr class="status-column-hover">
+                                <td class="border px-4 py-2">1</td>
+                                <td class="border px-4 py-2">Coffee Beans</td>
+                                <td class="border px-4 py-2">100 kg</td>
+                                <td class="border px-4 py-2">Coffee</td>
+                                <td class="border px-4 py-2">$100</td>
+                                <td class="border px-4 py-2">123-456-7890</td>
+                                <td class="border px-4 py-2">
+                                    <button id="view-supply" class="text-blue-600">View</button>
+                                    <button id="edit-supply" class="text-green-600 ml-2">Edit</button>
+                                    <button class="text-red-600 ml-2">Delete</button>
+                                </td>
+                                <td class="border px-4 py-2">
+                                    <label class="status-toggle">
+                                        <input type="checkbox">
+                                        <span class="toggle"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            
+                            <tr class="status-column-hover">
+                                <td class="border px-4 py-2">2</td>
+                                <td class="border px-4 py-2">Sugar</td>
+                                <td class="border px-4 py-2">50 kg</td>
+                                <td class="border px-4 py-2">Sweeteners</td>
+                                <td class="border px-4 py-2">$50</td>
+                                <td class="border px-4 py-2">987-654-3210</td>
+                                <td class="border px-4 py-2">
+                                    <button id="view-supply" class="text-blue-600">View</button>
+                                    <button id="edit-supply" class="text-green-600 ml-2">Edit</button>
+                                    <button class="text-red-600 ml-2">Delete</button>
+                                </td>
+                                <td class="border px-4 py-2">
+                                    <label class="status-toggle">
+                                        <input type="checkbox">
+                                        <span class="toggle"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="status-column-hover">
+                                <td class="border px-4 py-2">3</td>
+                                <td class="border px-4 py-2">Cups</td>
+                                <td class="border px-4 py-2">2000 units</td>
+                                <td class="border px-4 py-2">Containers</td>
+                                <td class="border px-4 py-2">$30</td>
+                                <td class="border px-4 py-2">456-789-0123</td>
+                                <td class="border px-4 py-2">
+                                    <button id="view-supply" class="text-blue-600">View</button>
+                                    <button id="edit-supply" class="text-green-600 ml-2">Edit</button>
+                                    <button class="text-red-600 ml-2">Delete</button>
+                                </td>
+                                <td class="border px-4 py-2">
+                                    <label class="status-toggle">
+                                        <input type="checkbox">
+                                        <span class="toggle"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="ingredients-table" style="display: none;">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-semibold" style="color: #884A39;"><strong>List of Ingredients</strong></h3>
+                        <!-- add Ingredients button -->
+                        <button id="add-ingredients" class="block text-white hover:rounded px-3 py-2" style="background-color: #884A39; border-radius: 5px;">Add Ingredients</button>
+                    </div>
+                    <table class="table-auto w-full" style="border: 1px solid black;">
+                        <thead>
+                            <tr>
+                                <th class="px-4 py-2 "><div  style="display: flex; align-items: center; justify-content: space-between;"><h5>ID</h5><img src="images/sort-solid.svg" class="sort-icon" alt="Sort Icon" style="width: 0.8em; height: 0.8em;"></div></th>
+                                <th class="px-4 py-2 "><div  style="display: flex; align-items: center; justify-content: space-between;"><h5>Supply Name</h5><img src="images/sort-solid.svg" class="sort-icon" alt="Sort Icon" style="width: 0.8em; height: 0.8em;"></div></th>
+                                <th class="px-4 py-2 "><div  style="display: flex; align-items: center; justify-content: space-between;"><h5>Unit of Measurement</h5><img src="images/sort-solid.svg" class="sort-icon" alt="Sort Icon" style="width: 0.8em; height: 0.8em;"></div></th>
+                                <th class="px-4 py-2 "><div  style="display: flex; align-items: center; justify-content: space-between;"><h5>Category</h5><img src="images/sort-solid.svg" class="sort-icon" alt="Sort Icon" style="width: 0.8em; height: 0.8em;"></div></th>
+                                <th class="px-4 py-2 "><div  style="display: flex; align-items: center; justify-content: space-between;"><h5>Cost</h5><img src="images/sort-solid.svg" class="sort-icon" alt="Sort Icon" style="width: 0.8em; height: 0.8em;"></div></th>
+                                <th class="px-4 py-2 ">Supplier Contact No.</th>
+                                <th class="px-4 py-2 ">Modify</th>
+                                <th class="px-4 py-2 "><div  style="display: flex; align-items: center; justify-content: space-between;"><h5>Status</h5></div></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr class="status-column-hover">
+                                <td class="border px-4 py-2">1</td>
+                                <td class="border px-4 py-2">Milk</td>
+                                <td class="border px-4 py-2">10 liters</td>
+                                <td class="border px-4 py-2">Dairy</td>
+                                <td class="border px-4 py-2">$20</td>
+                                <td class="border px-4 py-2">123-456-7890</td>
+                                <td class="border px-4 py-2">
+                                    <button id="view-ingredient" class="text-blue-600">View</button>
+                                    <button id="edit-ingredient" class="text-green-600 ml-2">Edit</button>
+                                    <button class="text-red-600 ml-2">Delete</button>
+                                </td>
+                                <td class="border px-4 py-2">
+                                    <label class="status-toggle">
+                                        <input type="checkbox">
+                                        <span class="toggle"></span>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr class="status-column-hover">
+                                <td class="border px-4 py-2">2</td>
+                                <td class="border px-4 py-2">Chocolate</td>
+                                <td class="border px-4 py-2">30 bars</td>
+                                <td class="border px-4 py-2">Confectionery</td>
+                                <td class="border px-4 py-2">$25</td>
+                                <td class="border px-4 py-2">321-654-9870</td>
+                                <td class="border px-4 py-2">
+                                    <button id="view-ingredient" class="text-blue-600">View</button>
+                                    <button id="edit-ingredient" class="text-green-600 ml-2">Edit</button>
+                                    <button class="text-red-600 ml-2">Delete</button>
+                                </td>
+                                <td class="border px-4 py-2">
+                                    <label class="status-toggle">
+                                        <input type="checkbox">
+                                        <span class="toggle"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="status-column-hover">
+                                <td class="border px-4 py-2">3</td>
+                                <td class="border px-4 py-2">Vanilla Extract</td>
+                                <td class="border px-4 py-2">5 bottles</td>
+                                <td class="border px-4 py-2">Flavorings</td>
+                                <td class="border px-4 py-2">$10</td>
+                                <td class="border px-4 py-2">789-012-3456</td>
+                                <td class="border px-4 py-2">
+                                    <button id="view-ingredient" class="text-blue-600">View</button>
+                                    <button id="edit-ingredient" class="text-green-600 ml-2">Edit</button>
+                                    <button class="text-red-600 ml-2">Delete</button>
+                                </td>
+                                <td class="border px-4 py-2">
+                                    <label class="status-toggle">
+                                        <input type="checkbox">
+                                        <span class="toggle"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- add Supplies -->
+                <div id="add-supply-overlay" class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
+                    <div class="p-8 rounded shadow-lg w-full max-w-lg" style="background-color: #fff4ef;">
+
+                        <h3 class="text-2xl font-bold mb-4 text-black">Create supply details</h3>
+                        <form>
+                            
+                        </form>
+                    </div>
+                </div>
+
+                <!-- add Ingredients -->
+                <div id="add-ingredients-overlay" class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
+                    <div class="p-8 rounded shadow-lg w-full max-w-lg" style="background-color: #fff4ef;">
+                        
+                        <h3 class="text-2xl font-bold mb-4 text-black">Create ingredient details</h3>
+                        <form>
+                            
+                        </form>
+                    </div>
+                </div>
+
+                <!-- view Supplies -->
+                <div id="view-supply-overlay" class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
+                    <div class="p-8 rounded shadow-lg w-full max-w-2xl" style="background-color: #fff4ef;">
+
+                        <h3 class="text-2xl font-bold mb-4 text-black">Supply details</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="col-span-2 flex justify-center">
+                                <img id="supply-image" src="path_to_image" alt="Supply Image" class="w-1/2 h-auto rounded">
+                            </div>
+                            <div class="col-span-1">
+                                <p class="text-sm font-medium text-gray-700" style="color: #884A39">Name of supply:</p>
+                                <p id="supply-name" class="text-lg text-[#8B4513] font-semibold">Coffee cup</p>
+                            </div>
+                            <div class="col-span-1">
+                                <p class="text-sm font-medium text-gray-700" style="color: #884A39">Category:</p>
+                                <p id="category" class="text-lg text-[#8B4513] font-semibold">Utensils</p>
+                            </div>
+                            <div class="col-span-1">
+                                <p class="text-sm font-medium text-gray-700" style="color: #884A39">Unit of measure:</p>
+                                <p id="unit-measure" class="text-lg text-[#8B4513] font-semibold">Cases</p>
+                            </div>
+                            <div class="col-span-1">
+                                <p class="text-sm font-medium text-gray-700" style="color: #884A39">Description:</p>
+                                <p id="description" class="text-lg text-[#8B4513]">Disposable coffee cups for hot beverages</p>
+                            </div>
+                            <div class="col-span-1">
+                                <p class="text-sm font-medium text-gray-700" style="color: #884A39">Supplier:</p>
+                                <p id="supplier" class="text-lg text-[#8B4513] font-semibold">Cup Company</p>
+                            </div>
+                            <div class="col-span-1">
+                                <p class="text-sm font-medium text-gray-700" style="color: #884A39">Supplier contact no.:</p>
+                                <p id="supplier-contact" class="text-lg text-[#8B4513]">+63 913 455 23121</p>
+                            </div>
+                            <div class="col-span-1">
+                                <p class="text-sm font-medium text-gray-700" style="color: #884A39">Supply expiration date:</p>
+                                <p id="expiration-date" class="text-lg text-[#8B4513]">March 22, 2027</p>
+                            </div>
+                            <div class="col-span-1">
+                                <p class="text-sm font-medium text-gray-700" style="color: #884A39">Price:</p>
+                                <p id="price" class="text-lg text-[#8B4513]">₱9.12</p>
+                            </div>
+                            <div class="col-span-2 flex justify-end">
+                                <button id="close-view-supply-overlay" class="bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-2 rounded">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- view ingredients -->
+                <div id="view-ingredient-overlay" class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
+                    <div class="p-8 rounded shadow-lg w-full max-w-2xl" style="background-color: #fff4ef;">
+
+                        <h3 class="text-2xl font-bold mb-4 text-black">Ingredient details</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="col-span-2 flex justify-center">
+                                <img id="ingredient-image" src="path_to_image" alt="Ingredient Image" class="w-1/2 h-auto rounded">
+                            </div>
+                            <div class="col-span-1">
+                                <p class="text-sm font-medium text-gray-700" style="color: #884A39">Name of ingredient:</p>
+                                <p id="ingredient-name" class="text-lg text-[#8B4513] font-semibold">Coffee Powder</p>
+                            </div>
+                            <div class="col-span-1">
+                                <p class="text-sm font-medium text-gray-700" style="color: #884A39">Category:</p>
+                                <p id="category" class="text-lg text-[#8B4513] font-semibold">Powder</p>
+                            </div>
+                            <div class="col-span-1">
+                                <p class="text-sm font-medium text-gray-700" style="color: #884A39">Unit of measure:</p>
+                                <p id="unit-measure" class="text-lg text-[#8B4513] font-semibold">Packs</p>
+                            </div>
+                            <div class="col-span-1">
+                                <p class="text-sm font-medium text-gray-700" style="color: #884A39">Description:</p>
+                                <p id="description" class="text-lg text-[#8B4513]">For making drinks</p>
+                            </div>
+                            <div class="col-span-1">
+                                <p class="text-sm font-medium text-gray-700" style="color: #884A39">Supplier:</p>
+                                <p id="supplier" class="text-lg text-[#8B4513] font-semibold">coffee Company</p>
+                            </div>
+                            <div class="col-span-1">
+                                <p class="text-sm font-medium text-gray-700" style="color: #884A39">Supplier contact no.:</p>
+                                <p id="supplier-contact" class="text-lg text-[#8B4513]">+63 913 455 23121</p>
+                            </div>
+                            <div class="col-span-1">
+                                <p class="text-sm font-medium text-gray-700" style="color: #884A39">Ingredient expiration date:</p>
+                                <p id="expiration-date" class="text-lg text-[#8B4513]">March 22, 2027</p>
+                            </div>
+                            <div class="col-span-1">
+                                <p class="text-sm font-medium text-gray-700" style="color: #884A39">Price:</p>
+                                <p id="price" class="text-lg text-[#8B4513]">₱9.12</p>
+                            </div>
+                            <div class="col-span-2 flex justify-end">
+                                <button id="close-view-ingredient-overlay" class="bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-2 rounded">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- editing Supplies -->
+                <div id="edit-supply-overlay" class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
+                    <div class="p-8 rounded shadow-lg w-full max-w-2xl" style="background-color: #fff4ef;">
+                        
+                        <h3 class="text-2xl font-bold mb-4 text-black">Edit supply details</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="col-span-2 flex justify-center">
+                                <img id="supply-image" src="path_to_image" alt="Supply Image" class="w-1/2 h-auto rounded mb-2">
+                            </div>
+                            <div class="col-span-2 flex justify-center">
+                                <label class="block">
+                                    <span class="sr-only">Choose file</span>
+                                    <input type="file" class="block w-full text-sm text-slate-500
+                                    file:mr-4 file:py-2 file:px-4
+                                    file:rounded-full file:border-0
+                                    file:text-sm file:font-semibold
+                                    file:bg-violet-50 file:text-violet-700
+                                    hover:file:bg-violet-100
+                                    "/>
+                                </label>
+                            </div>
+                            <div class="col-span-1">
+                                <label class="text-sm font-medium text-gray-700" style="color: #884A39">Name of supply:</label>
+                                <input type="text" id="supply-name" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="Coffee cup">
+                            </div>
+                            <div class="col-span-1">
+                                <label class="text-sm font-medium text-gray-700" style="color: #884A39">Category:</label>
+                                <input type="text" id="category" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="Utensils">
+                            </div>
+                            <div class="col-span-1">
+                                <label class="text-sm font-medium text-gray-700" style="color: #884A39">Unit of measure:</label>
+                                <input type="text" id="unit-measure" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="Cases">
+                            </div>
+                            <div class="col-span-1">
+                                <label class="text-sm font-medium text-gray-700" style="color: #884A39">Description:</label>
+                                <input type="text" id="description" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="Disposable coffee cups for hot beverages">
+                            </div>
+                            <div class="col-span-1">
+                                <label class="text-sm font-medium text-gray-700" style="color: #884A39">Supplier:</label>
+                                <input type="text" id="supplier" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="Cup Company">
+                            </div>
+                            <div class="col-span-1">
+                                <label class="text-sm font-medium text-gray-700" style="color: #884A39">Supplier contact no.:</label>
+                                <input type="text" id="supplier-contact" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="+63 913 455 23121">
+                            </div>
+                            <div class="col-span-1">
+                                <label class="text-sm font-medium text-gray-700" style="color: #884A39">Supply expiration date:</label>
+                                <input type="text" id="expiration-date" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="March 22, 2027">
+                            </div>
+                            <div class="col-span-1">
+                                <label class="text-sm font-medium text-gray-700" style="color: #884A39">Price:</label>
+                                <input type="text" id="price" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="₱9.12">
+                            </div>
+                            <div class="col-span-2 flex justify-end">
+                                <button id="close-edit-supply-overlay" class="bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-2 rounded mr-2" style="margin: 5px;">Close</button>
+                                <button id="save-supply" type="save-changes" class=" hover:bg-[#733E30] text-white px-4 py-2 rounded" style="background-color: #884A39; margin: 5px;">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- editing ingredient -->
+                <div id="edit-ingredient-overlay" class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
+                    <div class="p-8 rounded shadow-lg w-full max-w-2xl" style="background-color: #fff4ef;">
+                        
+                        <h3 class="text-2xl font-bold mb-4 text-black">Edit ingredient details</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="col-span-2 flex justify-center">
+                                <img id="ingredient-image" src="path_to_image" alt="ingredient Image" class="w-1/2 h-auto rounded mb-2">
+                            </div>
+                            <div class="col-span-2 flex justify-center">
+                                <label class="block">
+                                    <span class="sr-only">Choose file</span>
+                                    <input type="file" class="block w-full text-sm text-slate-500
+                                    file:mr-4 file:py-2 file:px-4
+                                    file:rounded-full file:border-0
+                                    file:text-sm file:font-semibold
+                                    file:bg-violet-50 file:text-violet-700
+                                    hover:file:bg-violet-100
+                                    "/>
+                                </label>
+                            </div>
+                            <div class="col-span-1">
+                                <label class="text-sm font-medium text-gray-700" style="color: #884A39">Name of ingredient:</label>
+                                <input type="text" id="ingredient-name" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="Coffee">
+                            </div>
+                            <div class="col-span-1">
+                                <label class="text-sm font-medium text-gray-700" style="color: #884A39">Category:</label>
+                                <input type="text" id="category" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="Powder">
+                            </div>
+                            <div class="col-span-1">
+                                <label class="text-sm font-medium text-gray-700" style="color: #884A39">Unit of measure:</label>
+                                <input type="text" id="unit-measure" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="Packs">
+                            </div>
+                            <div class="col-span-1">
+                                <label class="text-sm font-medium text-gray-700" style="color: #884A39">Description:</label>
+                                <input type="text" id="description" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="coffee for hot beverages">
+                            </div>
+                            <div class="col-span-1">
+                                <label class="text-sm font-medium text-gray-700" style="color: #884A39">Supplier:</label>
+                                <input type="text" id="supplier" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="coffee Company">
+                            </div>
+                            <div class="col-span-1">
+                                <label class="text-sm font-medium text-gray-700" style="color: #884A39">Supplier contact no.:</label>
+                                <input type="text" id="supplier-contact" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="+63 913 455 23121">
+                            </div>
+                            <div class="col-span-1">
+                                <label class="text-sm font-medium text-gray-700" style="color: #884A39">ingredient expiration date:</label>
+                                <input type="text" id="expiration-date" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="March 22, 2027">
+                            </div>
+                            <div class="col-span-1">
+                                <label class="text-sm font-medium text-gray-700" style="color: #884A39">Price:</label>
+                                <input type="text" id="price" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="₱9.12">
+                            </div>
+                            <div class="col-span-2 flex justify-end">
+                                <button id="close-edit-ingredient-overlay" class="bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-2 rounded mr-2" style="margin: 5px;">Close</button>
+                                <button id="save-ingredient" type="save-changes" class=" hover:bg-[#733E30] text-white px-4 py-2 rounded" style="background-color: #884A39; margin: 5px;">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/SupplyManagement.js"></script>
+</body>
+
+</html>

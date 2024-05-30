@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    font-family: 'Lato';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #F0EAD6;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: #884A39;
+}
+
+.myCoffeeshop {
+    text-decoration: none;
+}
+
+.sidebar .text {
+    font-size: 25px;
+    color: white;
+}
+
+.sidebar .image {
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li {
+    height: 50px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 65px;
+    font-size: 27px;
+}
+
+.sidebar li .icon {
+    color: black;
+    transition: 0.2s;
+} 
+
+.sidebar li .text {
+    color: #F0EAD6;
+    transition: 0.2s;
+    font-size: 22.5px;
+}
+
+.sidebar header {
+    position: relative;
+}
+
+.sidebar .image-text {
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.sidebar .image-text img {
+    width: 85px;
+}
+
+.sidebar header .image-text {
+    display: flex;
+    align-items: center;
+}
+
+header .image-text .header-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 19px;
+    margin-left: -10px;
+}
+
+.header-text .myText {
+    font-weight: 800;
+}
+
+.header-text .coffeeText {
+    font-weight: 800;
+    margin-top: -1px;
+    color: white;
+}
+
+.header-text .coffeeText .shopText {
+    font-weight: 800;
+    margin-top: -1px;
+    color: #FFCC66;
+}
+
+.sidebar li a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.4s;
+}
+
+.sidebar li a:hover {
+    background: #733E30;
+}
+
+.sidebar li a:hover .text {
+    color: #FFCC66;
+}
+
+.sidebar li a.activeSidebar {
+    background: #733E30;
+}
+
+.sidebar li a.activeSidebar .text {
+    color: #FFCC66;
+}
+
+.sidebar .menu-bar {
+    height: calc(100% - 215px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bottom-content {
+    padding-top: 40px;
+    border-top: 3px solid #6D3B2E;
+}
