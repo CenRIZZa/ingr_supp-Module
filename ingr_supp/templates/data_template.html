@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Display</title>
+</head>
+<body>
+    <h1>Ingredients</h1>
+    <ul>
+        {% for ingr in ingr_data %}
+        <li>{{ ingr }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Suppliers</h1>
+    <ul>
+        {% for supp in supp_data %}
+        <li>{{ supp }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

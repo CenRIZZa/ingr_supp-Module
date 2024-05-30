@@ -2,6 +2,8 @@ import json
 from django.http import HttpResponseServerError
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.csrf import csrf_exempt
+
+from api.serializers import IngrSerializer
 from .models import Ingr,Supp
 from django.shortcuts import render, redirect
 from .models import Ingr
@@ -11,6 +13,14 @@ from django.http import HttpResponseServerError
 from .forms import IngrFormUp1
 from .models import Ingr
 from datetime import datetime
+from django.http import JsonResponse
+
+
+
+
+
+
+
 
 
 
@@ -142,3 +152,18 @@ from django.shortcuts import render
 
 def main(request):
     return render(request, 'SupplyManagement.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
