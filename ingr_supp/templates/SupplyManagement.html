@@ -1,6 +1,3 @@
-{%load static%}
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +14,6 @@
 </head>
 
 <body style="background-color: #F0EAD6;">
-
     <div class="flex h-screen" style="background-color: #F0EAD6;">
         <!-- sidemenu -->
         <nav class="sidebar">
@@ -120,7 +116,7 @@
                     <div class="divider"></div>
                 </div>
                 
-                <!--suppliesTable -->
+<!--suppliesTable -->
                 <div id="supplies-table">
                     <div class="flex justify-between items-center mb-4">
 
@@ -142,14 +138,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- sample row -->
+<!-- sample row -->
                             <tr class="status-column-hover">
-                                <td class="border px-4 py-2">1</td>
-                                <td class="border px-4 py-2">Coffee Beans</td>
-                                <td class="border px-4 py-2">100 kg</td>
-                                <td class="border px-4 py-2">Coffee</td>
-                                <td class="border px-4 py-2">$100</td>
-                                <td class="border px-4 py-2">123-456-7890</td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
                                 <td class="border px-4 py-2">
                                     <button id="view-supply" class="text-blue-600">View</button>
                                     <button id="edit-supply" class="text-green-600 ml-2">Edit</button>
@@ -161,46 +157,7 @@
                                         <span class="toggle"></span>
                                     </label>
                                 </td>
-                            </tr>
-                            
-                            <tr class="status-column-hover">
-                                <td class="border px-4 py-2">2</td>
-                                <td class="border px-4 py-2">Sugar</td>
-                                <td class="border px-4 py-2">50 kg</td>
-                                <td class="border px-4 py-2">Sweeteners</td>
-                                <td class="border px-4 py-2">$50</td>
-                                <td class="border px-4 py-2">987-654-3210</td>
-                                <td class="border px-4 py-2">
-                                    <button id="view-supply" class="text-blue-600">View</button>
-                                    <button id="edit-supply" class="text-green-600 ml-2">Edit</button>
-                                    <button class="text-red-600 ml-2">Delete</button>
-                                </td>
-                                <td class="border px-4 py-2">
-                                    <label class="status-toggle">
-                                        <input type="checkbox">
-                                        <span class="toggle"></span>
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="status-column-hover">
-                                <td class="border px-4 py-2">3</td>
-                                <td class="border px-4 py-2">Cups</td>
-                                <td class="border px-4 py-2">2000 units</td>
-                                <td class="border px-4 py-2">Containers</td>
-                                <td class="border px-4 py-2">$30</td>
-                                <td class="border px-4 py-2">456-789-0123</td>
-                                <td class="border px-4 py-2">
-                                    <button id="view-supply" class="text-blue-600">View</button>
-                                    <button id="edit-supply" class="text-green-600 ml-2">Edit</button>
-                                    <button class="text-red-600 ml-2">Delete</button>
-                                </td>
-                                <td class="border px-4 py-2">
-                                    <label class="status-toggle">
-                                        <input type="checkbox">
-                                        <span class="toggle"></span>
-                                    </label>
-                                </td>
-                            </tr>
+                            </tr>                            
                         </tbody>
                     </table>
                 </div>
@@ -225,53 +182,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+<!-- sample row -->   
                             <tr class="status-column-hover">
-                                <td class="border px-4 py-2">1</td>
-                                <td class="border px-4 py-2">Milk</td>
-                                <td class="border px-4 py-2">10 liters</td>
-                                <td class="border px-4 py-2">Dairy</td>
-                                <td class="border px-4 py-2">$20</td>
-                                <td class="border px-4 py-2">123-456-7890</td>
-                                <td class="border px-4 py-2">
-                                    <button id="view-ingredient" class="text-blue-600">View</button>
-                                    <button id="edit-ingredient" class="text-green-600 ml-2">Edit</button>
-                                    <button class="text-red-600 ml-2">Delete</button>
-                                </td>
-                                <td class="border px-4 py-2">
-                                    <label class="status-toggle">
-                                        <input type="checkbox">
-                                        <span class="toggle"></span>
-                                    </label>
-                                </td>
-                            </tr>
-
-                            <tr class="status-column-hover">
-                                <td class="border px-4 py-2">2</td>
-                                <td class="border px-4 py-2">Chocolate</td>
-                                <td class="border px-4 py-2">30 bars</td>
-                                <td class="border px-4 py-2">Confectionery</td>
-                                <td class="border px-4 py-2">$25</td>
-                                <td class="border px-4 py-2">321-654-9870</td>
-                                <td class="border px-4 py-2">
-                                    <button id="view-ingredient" class="text-blue-600">View</button>
-                                    <button id="edit-ingredient" class="text-green-600 ml-2">Edit</button>
-                                    <button class="text-red-600 ml-2">Delete</button>
-                                </td>
-                                <td class="border px-4 py-2">
-                                    <label class="status-toggle">
-                                        <input type="checkbox">
-                                        <span class="toggle"></span>
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="status-column-hover">
-                                <td class="border px-4 py-2">3</td>
-                                <td class="border px-4 py-2">Vanilla Extract</td>
-                                <td class="border px-4 py-2">5 bottles</td>
-                                <td class="border px-4 py-2">Flavorings</td>
-                                <td class="border px-4 py-2">$10</td>
-                                <td class="border px-4 py-2">789-012-3456</td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
+                                <td class="border px-4 py-2"></td>
                                 <td class="border px-4 py-2">
                                     <button id="view-ingredient" class="text-blue-600">View</button>
                                     <button id="edit-ingredient" class="text-green-600 ml-2">Edit</button>
@@ -287,29 +205,105 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- add Supplies -->
+<!-- add Supplies -->
                 <div id="add-supply-overlay" class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
                     <div class="p-8 rounded shadow-lg w-full max-w-lg" style="background-color: #fff4ef;">
 
                         <h3 class="text-2xl font-bold mb-4 text-black">Create supply details</h3>
                         <form>
-                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="mb-4 col-span-1">
+                                    <label for="supply-name" class="block text-sm font-medium" style="color: #884A39;">Supply Name</label>
+                                    <input type="text" id="supply-name" name="supply-name" placeholder="Ex. Paper cup lids" class="mt-1 p-2 border border-gray-300 rounded w-full">
+                                </div>
+                                <div class="mb-4 col-span-1">
+                                    <label for="supplier-name" class="block text-sm font-medium" style="color: #884A39">Supplier Name</label>
+                                    <input type="text" id="supplier-name" name="supplier-name" placeholder="Ex. ABC Cup Company" class="mt-1 p-2 border border-gray-300 rounded w-full">
+                                </div>
+                                <div class="mb-4 col-span-1">
+                                    <label for="category" class="block text-sm font-medium" style="color: #884A39">Category</label>
+                                    <input type="text" id="category" name="category" placeholder="Ex. Utensils" class="mt-1 p-2 border border-gray-300 rounded w-full">
+                                </div>
+                                <div class="mb-4 col-span-1">
+                                    <label for="supplier-contact" class="block text-sm font-medium" style="color: #884A39">Supplier contact number</label>
+                                    <input type="text" id="supplier-contact" name="supplier-contact" placeholder="Ex. 09876512356" class="mt-1 p-2 border border-gray-300 rounded w-full">
+                                </div>
+                                <div class="mb-4 col-span-1">
+                                    <label for="cost" class="block text-sm font-medium" style="color: #884A39">Cost</label>
+                                    <input type="text" id="cost" name="cost" placeholder="Ex. ₱9.50" class="mt-1 p-2 border border-gray-300 rounded w-full">
+                                </div>
+                                <div class="mb-4 col-span-1 grid grid-cols-2 gap-2">
+                                    <div>
+                                        <label for="unit-value" class="block text-sm font-medium" style="color: #884A39">Unit Value</label>
+                                        <input type="text" id="unit-value" name="unit-value" placeholder="Ex. 50" class="mt-1 p-2 border border-gray-300 rounded w-full">
+                                    </div>
+                                    <div>
+                                        <label for="unit-measure" class="block text-sm font-medium" style="color: #884A39">Unit Measure</label>
+                                        <input type="text" id="unit-measure" name="unit-measure" placeholder="Ex. ounce" class="mt-1 p-2 border border-gray-300 rounded w-full">
+                                    </div>
+                                </div>
+                                <div class="mb-4 col-span-2">
+                                    <label for="supply-image" class="block text-sm font-medium" style="color: #884A39">Upload supply Image</label>
+                                    <input type="file" id="supply-image" name="supply-image" class="mt-1 p-2 border border-gray-300 rounded w-full">
+                                </div>
+                            </div>
+                            <div class="flex justify-end mt-4">
+                                <button id="close-add-supply-overlay" type="button" class="bg-gray-300 hover:bg-gray-400 text-gray-700 ml-2 px-4 py-2 rounded" style="margin: 5px;">Cancel</button>
+                                <button type="submit" class="hover:bg-[#733E30] text-white px-4 py-2 rounded" style="background-color: #884A39; margin: 5px;">Create a supply</button>
+                            </div>
                         </form>
                     </div>
                 </div>
-
-                <!-- add Ingredients -->
+<!-- add Ingredients -->
                 <div id="add-ingredients-overlay" class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
                     <div class="p-8 rounded shadow-lg w-full max-w-lg" style="background-color: #fff4ef;">
                         
                         <h3 class="text-2xl font-bold mb-4 text-black">Create ingredient details</h3>
                         <form>
-                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="mb-4 col-span-1">
+                                    <label for="ingredients-name" class="block text-sm font-medium" style="color: #884A39">Ingredient Name</label>
+                                    <input type="text" id="ingredients-name" name="ingredients-name" placeholder="Ex. Coffee Jelly" class="mt-1 p-2 border border-gray-300 rounded w-full">
+                                </div>
+                                <div class="mb-4 col-span-1">
+                                    <label for="supplier-name" class="block text-sm font-medium" style="color: #884A39">Supplier Name</label>
+                                    <input type="text" id="supplier-name" name="supplier-name" placeholder="Ex. Jelly Doc Company" class="mt-1 p-2 border border-gray-300 rounded w-full">
+                                </div>
+                                <div class="mb-4 col-span-1">
+                                    <label for="category" class="block text-sm font-medium" style="color: #884A39">Category</label>
+                                    <input type="text" id="category" name="category" placeholder="Ex. Toppings" class="mt-1 p-2 border border-gray-300 rounded w-full">
+                                </div>
+                                <div class="mb-4 col-span-1">
+                                    <label for="supplier-contact" class="block text-sm font-medium" style="color: #884A39">Supplier contact number</label>
+                                    <input type="text" id="supplier-contact" name="supplier-contact" placeholder="Ex. 09876512356" class="mt-1 p-2 border border-gray-300 rounded w-full">
+                                </div>
+                                <div class="mb-4 col-span-1">
+                                    <label for="cost" class="block text-sm font-medium" style="color: #884A39">Cost</label>
+                                    <input type="text" id="cost" name="cost" placeholder="Ex. ₱9.50" class="mt-1 p-2 border border-gray-300 rounded w-full">
+                                </div>
+                                <div class="mb-4 col-span-1 grid grid-cols-2 gap-2">
+                                    <div>
+                                        <label for="unit-value" class="block text-sm font-medium" style="color: #884A39">Unit Value</label>
+                                        <input type="text" id="unit-value" name="unit-value" placeholder="Ex. 50" class="mt-1 p-2 border border-gray-300 rounded w-full">
+                                    </div>
+                                    <div>
+                                        <label for="unit-measure" class="block text-sm font-medium" style="color: #884A39">Unit Measure</label>
+                                        <input type="text" id="unit-measure" name="unit-measure" placeholder="Ex. ounce" class="mt-1 p-2 border border-gray-300 rounded w-full">
+                                    </div>
+                                </div>
+                                <div class="mb-4 col-span-2">
+                                    <label for="ingredients-image" class="block text-sm font-medium" style="color: #884A39">Upload ingredient Image</label>
+                                    <input type="file" id="ingredients-image" name="ingredients-image" class="mt-1 p-2 border border-gray-300 rounded w-full">
+                                </div>
+                            </div>
+                            <div class="flex justify-end mt-4">
+                                <button id="close-add-ingredients-overlay" type="button" class="bg-gray-300 hover:bg-gray-400 text-gray-700 ml-2 px-4 py-2 rounded" style="margin: 5px;">Cancel</button>
+                                <button type="submit" class=" hover:bg-[#733E30] text-white px-4 py-2 rounded" style="background-color: #884A39; margin: 5px;">Create an ingredient</button>
+                            </div>
                         </form>
                     </div>
                 </div>
-
-                <!-- view Supplies -->
+<!-- view Supplies -->
                 <div id="view-supply-overlay" class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
                     <div class="p-8 rounded shadow-lg w-full max-w-2xl" style="background-color: #fff4ef;">
 
@@ -320,35 +314,35 @@
                             </div>
                             <div class="col-span-1">
                                 <p class="text-sm font-medium text-gray-700" style="color: #884A39">Name of supply:</p>
-                                <p id="supply-name" class="text-lg text-[#8B4513] font-semibold">Coffee cup</p>
+                                <p id="supply-name" class="text-lg text-[#8B4513] font-semibold"></p>
                             </div>
                             <div class="col-span-1">
                                 <p class="text-sm font-medium text-gray-700" style="color: #884A39">Category:</p>
-                                <p id="category" class="text-lg text-[#8B4513] font-semibold">Utensils</p>
+                                <p id="category" class="text-lg text-[#8B4513] font-semibold"></p>
                             </div>
                             <div class="col-span-1">
                                 <p class="text-sm font-medium text-gray-700" style="color: #884A39">Unit of measure:</p>
-                                <p id="unit-measure" class="text-lg text-[#8B4513] font-semibold">Cases</p>
+                                <p id="unit-measure" class="text-lg text-[#8B4513] font-semibold"></p>
                             </div>
                             <div class="col-span-1">
                                 <p class="text-sm font-medium text-gray-700" style="color: #884A39">Description:</p>
-                                <p id="description" class="text-lg text-[#8B4513]">Disposable coffee cups for hot beverages</p>
+                                <p id="description" class="text-lg text-[#8B4513]"></p>
                             </div>
                             <div class="col-span-1">
                                 <p class="text-sm font-medium text-gray-700" style="color: #884A39">Supplier:</p>
-                                <p id="supplier" class="text-lg text-[#8B4513] font-semibold">Cup Company</p>
+                                <p id="supplier" class="text-lg text-[#8B4513] font-semibold"></p>
                             </div>
                             <div class="col-span-1">
                                 <p class="text-sm font-medium text-gray-700" style="color: #884A39">Supplier contact no.:</p>
-                                <p id="supplier-contact" class="text-lg text-[#8B4513]">+63 913 455 23121</p>
+                                <p id="supplier-contact" class="text-lg text-[#8B4513]"></p>
                             </div>
                             <div class="col-span-1">
                                 <p class="text-sm font-medium text-gray-700" style="color: #884A39">Supply expiration date:</p>
-                                <p id="expiration-date" class="text-lg text-[#8B4513]">March 22, 2027</p>
+                                <p id="expiration-date" class="text-lg text-[#8B4513]"></p>
                             </div>
                             <div class="col-span-1">
                                 <p class="text-sm font-medium text-gray-700" style="color: #884A39">Price:</p>
-                                <p id="price" class="text-lg text-[#8B4513]">₱9.12</p>
+                                <p id="price" class="text-lg text-[#8B4513]"></p>
                             </div>
                             <div class="col-span-2 flex justify-end">
                                 <button id="close-view-supply-overlay" class="bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-2 rounded">Close</button>
@@ -356,8 +350,7 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- view ingredients -->
+<!-- view ingredients -->
                 <div id="view-ingredient-overlay" class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
                     <div class="p-8 rounded shadow-lg w-full max-w-2xl" style="background-color: #fff4ef;">
 
@@ -368,35 +361,35 @@
                             </div>
                             <div class="col-span-1">
                                 <p class="text-sm font-medium text-gray-700" style="color: #884A39">Name of ingredient:</p>
-                                <p id="ingredient-name" class="text-lg text-[#8B4513] font-semibold">Coffee Powder</p>
+                                <p id="ingredient-name" class="text-lg text-[#8B4513] font-semibold"></p>
                             </div>
                             <div class="col-span-1">
                                 <p class="text-sm font-medium text-gray-700" style="color: #884A39">Category:</p>
-                                <p id="category" class="text-lg text-[#8B4513] font-semibold">Powder</p>
+                                <p id="category" class="text-lg text-[#8B4513] font-semibold"></p>
                             </div>
                             <div class="col-span-1">
                                 <p class="text-sm font-medium text-gray-700" style="color: #884A39">Unit of measure:</p>
-                                <p id="unit-measure" class="text-lg text-[#8B4513] font-semibold">Packs</p>
+                                <p id="unit-measure" class="text-lg text-[#8B4513] font-semibold"></p>
                             </div>
                             <div class="col-span-1">
                                 <p class="text-sm font-medium text-gray-700" style="color: #884A39">Description:</p>
-                                <p id="description" class="text-lg text-[#8B4513]">For making drinks</p>
+                                <p id="description" class="text-lg text-[#8B4513]"></p>
                             </div>
                             <div class="col-span-1">
                                 <p class="text-sm font-medium text-gray-700" style="color: #884A39">Supplier:</p>
-                                <p id="supplier" class="text-lg text-[#8B4513] font-semibold">coffee Company</p>
+                                <p id="supplier" class="text-lg text-[#8B4513] font-semibold"></p>
                             </div>
                             <div class="col-span-1">
                                 <p class="text-sm font-medium text-gray-700" style="color: #884A39">Supplier contact no.:</p>
-                                <p id="supplier-contact" class="text-lg text-[#8B4513]">+63 913 455 23121</p>
+                                <p id="supplier-contact" class="text-lg text-[#8B4513]"></p>
                             </div>
                             <div class="col-span-1">
                                 <p class="text-sm font-medium text-gray-700" style="color: #884A39">Ingredient expiration date:</p>
-                                <p id="expiration-date" class="text-lg text-[#8B4513]">March 22, 2027</p>
+                                <p id="expiration-date" class="text-lg text-[#8B4513]"></p>
                             </div>
                             <div class="col-span-1">
                                 <p class="text-sm font-medium text-gray-700" style="color: #884A39">Price:</p>
-                                <p id="price" class="text-lg text-[#8B4513]">₱9.12</p>
+                                <p id="price" class="text-lg text-[#8B4513]"></p>
                             </div>
                             <div class="col-span-2 flex justify-end">
                                 <button id="close-view-ingredient-overlay" class="bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-2 rounded">Close</button>
@@ -404,8 +397,7 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- editing Supplies -->
+<!-- editing Supplies -->
                 <div id="edit-supply-overlay" class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
                     <div class="p-8 rounded shadow-lg w-full max-w-2xl" style="background-color: #fff4ef;">
                         
@@ -428,35 +420,35 @@
                             </div>
                             <div class="col-span-1">
                                 <label class="text-sm font-medium text-gray-700" style="color: #884A39">Name of supply:</label>
-                                <input type="text" id="supply-name" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="Coffee cup">
+                                <input type="text" id="supply-name" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="">
                             </div>
                             <div class="col-span-1">
                                 <label class="text-sm font-medium text-gray-700" style="color: #884A39">Category:</label>
-                                <input type="text" id="category" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="Utensils">
+                                <input type="text" id="category" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="">
                             </div>
                             <div class="col-span-1">
                                 <label class="text-sm font-medium text-gray-700" style="color: #884A39">Unit of measure:</label>
-                                <input type="text" id="unit-measure" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="Cases">
+                                <input type="text" id="unit-measure" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="">
                             </div>
                             <div class="col-span-1">
                                 <label class="text-sm font-medium text-gray-700" style="color: #884A39">Description:</label>
-                                <input type="text" id="description" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="Disposable coffee cups for hot beverages">
+                                <input type="text" id="description" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="">
                             </div>
                             <div class="col-span-1">
                                 <label class="text-sm font-medium text-gray-700" style="color: #884A39">Supplier:</label>
-                                <input type="text" id="supplier" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="Cup Company">
+                                <input type="text" id="supplier" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="">
                             </div>
                             <div class="col-span-1">
                                 <label class="text-sm font-medium text-gray-700" style="color: #884A39">Supplier contact no.:</label>
-                                <input type="text" id="supplier-contact" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="+63 913 455 23121">
+                                <input type="text" id="supplier-contact" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="">
                             </div>
                             <div class="col-span-1">
                                 <label class="text-sm font-medium text-gray-700" style="color: #884A39">Supply expiration date:</label>
-                                <input type="text" id="expiration-date" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="March 22, 2027">
+                                <input type="text" id="expiration-date" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="">
                             </div>
                             <div class="col-span-1">
                                 <label class="text-sm font-medium text-gray-700" style="color: #884A39">Price:</label>
-                                <input type="text" id="price" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="₱9.12">
+                                <input type="text" id="price" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="">
                             </div>
                             <div class="col-span-2 flex justify-end">
                                 <button id="close-edit-supply-overlay" class="bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-2 rounded mr-2" style="margin: 5px;">Close</button>
@@ -465,8 +457,7 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- editing ingredient -->
+<!-- editing ingredient -->
                 <div id="edit-ingredient-overlay" class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
                     <div class="p-8 rounded shadow-lg w-full max-w-2xl" style="background-color: #fff4ef;">
                         
@@ -489,35 +480,35 @@
                             </div>
                             <div class="col-span-1">
                                 <label class="text-sm font-medium text-gray-700" style="color: #884A39">Name of ingredient:</label>
-                                <input type="text" id="ingredient-name" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="Coffee">
+                                <input type="text" id="ingredient-name" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="">
                             </div>
                             <div class="col-span-1">
                                 <label class="text-sm font-medium text-gray-700" style="color: #884A39">Category:</label>
-                                <input type="text" id="category" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="Powder">
+                                <input type="text" id="category" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="">
                             </div>
                             <div class="col-span-1">
                                 <label class="text-sm font-medium text-gray-700" style="color: #884A39">Unit of measure:</label>
-                                <input type="text" id="unit-measure" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="Packs">
+                                <input type="text" id="unit-measure" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="">
                             </div>
                             <div class="col-span-1">
                                 <label class="text-sm font-medium text-gray-700" style="color: #884A39">Description:</label>
-                                <input type="text" id="description" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="coffee for hot beverages">
+                                <input type="text" id="description" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="">
                             </div>
                             <div class="col-span-1">
                                 <label class="text-sm font-medium text-gray-700" style="color: #884A39">Supplier:</label>
-                                <input type="text" id="supplier" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="coffee Company">
+                                <input type="text" id="supplier" class="block w-full text-lg text-[#8B4513] font-semibold border rounded p-1" value="">
                             </div>
                             <div class="col-span-1">
                                 <label class="text-sm font-medium text-gray-700" style="color: #884A39">Supplier contact no.:</label>
-                                <input type="text" id="supplier-contact" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="+63 913 455 23121">
+                                <input type="text" id="supplier-contact" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="">
                             </div>
                             <div class="col-span-1">
                                 <label class="text-sm font-medium text-gray-700" style="color: #884A39">ingredient expiration date:</label>
-                                <input type="text" id="expiration-date" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="March 22, 2027">
+                                <input type="text" id="expiration-date" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="">
                             </div>
                             <div class="col-span-1">
                                 <label class="text-sm font-medium text-gray-700" style="color: #884A39">Price:</label>
-                                <input type="text" id="price" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="₱9.12">
+                                <input type="text" id="price" class="block w-full text-lg text-[#8B4513] border rounded p-1" value="">
                             </div>
                             <div class="col-span-2 flex justify-end">
                                 <button id="close-edit-ingredient-overlay" class="bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-2 rounded mr-2" style="margin: 5px;">Close</button>
