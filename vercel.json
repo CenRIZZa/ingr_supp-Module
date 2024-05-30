@@ -1,6 +1,6 @@
 {
     "builds": [{
-        "src": "djangoprojectname/wsgi.py",
+        "src": "ingr_supp_module/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
     }],
