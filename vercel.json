@@ -7,7 +7,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "djangoprojectname/wsgi.py"
+            "dest": "ingr_supp_module/wsgi.py"
         }
     ]
 }
